@@ -1,0 +1,1355 @@
+/*Extra Large Device*/
+
+@media only screen and (min-width: 1201px) {}
+
+/*Extra Large Device*/
+
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+    .chef_slide_1 .slick-prev,
+    .welcome_slider .slick-prev {
+        left: -80px;
+    }
+    .chef_slide_1 .slick-next,
+    .welcome_slider .slick-next {
+        right: -80px;
+    }
+    .shape_img_1 {
+        right: 10%;
+    }
+    .chopcafe_video_1 .shape_img_2 {
+        left: 20%;
+    }
+    .chopcafe_video_1 .shape_img_3 {
+        right: 20.55%;
+    }
+    .chopcafe_video_1 .shape_img_4 {
+        right: 11%;
+    }
+    .chopcafe_video_1 .shape_img_8 {
+        right: 15%;
+    }
+}
+
+/*Medium Device*/
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .site_menu {
+        display: none;
+    }
+    .mobile_wrapper {
+        display: block;
+    }
+    .header_demo_1 {
+        background-color: #010a19;
+    }
+    .header_slider_1 {
+        padding: 100px 0 100px;
+    }
+    .chopcafe_filter .chopcafe_btn {
+        padding: 12px 15px;
+    }
+    .how_to_order_1 .grid_item .grid_inner_item.item_line_2:before {
+        right: -190px;
+    }
+    .chopcafe_content_box .festival_title h3 {
+        font-size: 25px;
+    }
+    .chopcafe_blog_1 .grid_inner_item {
+        display: block;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_img {
+        width: 100%;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_img img {
+        width: 100%;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_info {
+        width: 100%;
+    }
+    .chopcafe_title h2 {
+        font-size: 42px;
+        line-height: 48px;
+    }
+    .chopcafe_title .title_divider:after,
+    .chopcafe_title .title_divider:before {
+        width: 130px;
+    }
+    .content_title .title_divider:after,
+    .content_title .title_divider:before {
+        width: 160px;
+    }
+    .footer_widget_box .widget_title h4 {
+        font-size: 20px;
+    }
+    .widget_contact .info_list .info_text {
+        margin-left: 10px;
+    }
+    .widget_contact .info_list .info_icon i {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .footer_widget_box .single_news .news_link h3 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .footer_logo .brand_logo:after,
+    .footer_logo .brand_logo:before {
+        width: 33%;
+    }
+    ul.social_widget li {
+        margin-right: 9px;
+    }
+    /*home_v2.html*/
+    .chopcafe_fetaures_1 .chopcafe_img_box .fetaures_img:before {
+        top: 25px;
+        left: -15px;
+    }
+    .food_list_box .grid_inner_item {
+        display: block;
+    }
+    .grid_inner_item .chopcafe_img {
+        width: 100%;
+    }
+    .chopcafe_menu_2 .overlay_content {
+        display: none;
+    }
+    .chopcafe_menu_2 .food_list_box .grid_inner_item {
+        padding: 20px 20px 15px;
+    }
+    .chopcafe_menu_2 .food_list_box .grid_inner_item .chopcafe_info {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+    .chopcafe_chef_2 .chopcafe_img .overlay_content ul li {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .chopcafe_chef_2 .chef_box .chef_info h3 {
+        font-size: 14px;
+    }
+    /*home_v3.html*/
+    .mobile_wrapper_3 .mobile_menu ul li a {
+        color: #68e68b;
+    }
+    .mobile_wrapper_3 .mobile_menu ul li.cart_icon span.count {
+        background: #87eba3;
+    }
+    .chopcafe_img img {
+        width: 100%;
+    }
+    .welcome_content h1 {
+        font-size: 42px;
+        line-height: 48px;
+    }
+    .welcome_slider_2 .slick-dots {
+        right: -50px;
+    }
+    .chopcafe_service_1 .grid_item .chopcafe_info h4 {
+        font-size: 18px;
+    }
+    .dishes_slider_1 .food_grid_box .grid_inner_item .chopcafe_info h3 {
+        font-size: 16px;
+    }
+    .dishes_slider_1 .food_grid_box .grid_inner_item .chopcafe_info {
+        padding: 10px;
+    }
+    .chopcafe_gallery_filter .gallery_btn {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .chopcafe_menu_3 .chopcafe_menu_item_box .grid_inner_item .chopcafe_info {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 20px;
+        ;
+    }
+    .chopcafe_content_box .contact_information_box a.info_btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    /*menu_v1.html*/
+    .chopcafe_menu_4 .food_list_box .chopcafe_info {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+    .chopcafe_menu_tab .nav-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    /*menu_v2.html*/
+    .food_grid_box .grid_inner_item .chopcafe_info h3 span,
+    .food_grid_box .grid_inner_item .chopcafe_info h3 {
+        font-size: 14px;
+    }
+    /*cart.html*/
+    .chopcafe_update_cart .update_cart a {
+        margin-left: 10px;
+        padding: 12px 20px;
+    }
+    /*shop_grid.html*/
+    .food_grid_box .grid_inner_item .overlay_content a.btn_a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    /*shop_grid_sidebar.html*/
+    .shop_filter .shop_link ul li {
+        margin-right: 10px;
+    }
+    .shop_sort span {
+        margin-right: 10px;
+    }
+    .shop_sort .selectoption.nice-select {
+        width: 160px;
+    }
+    .tags_box ul li a {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+    .pagination_list ul li {
+        margin-left: 15px;
+    }
+    .pagination_list ul li a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+    /*shop_list.html*/
+    .chopcafe_list_shop .food_list_box .grid_inner_item {
+        display: flex;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_img img {
+        width: 100%;
+        height: 100%;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info span.price {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info ul {
+        margin-bottom: 10px;
+    }
+    /*blog_3_column.html*/
+    .chopcafe_blog_3_column .grid_inner_item .chopcafe_info .post_meta ul li:after {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .chopcafe_blog_3 .post_meta ul li a {
+        font-size: 12px;
+    }
+    /*thanks.html*/
+    .chopcafe_thanks_content h2 {
+        font-size: 92px;
+    }
+    .chopcafe_thanks_content p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .checkout_form .selectoption.nice-select,
+    .shipping_form .nice-select.selectoption {
+        width: 100%;
+    }
+    .chopcafe_list_shop .food_list_box .grid_inner_item .overlay_content {
+        display: none;
+    }
+    .single_blog_main .post_share_tag .post_share ul li:first-child,
+    .single_blog_main .post_share_tag .post_tag ul li:first-child {
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+}
+
+/*Tablet Device*/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .header_demo_3.transparent_header {
+        top: 50px;
+    }
+    .site_menu {
+        display: none;
+    }
+    .chopcafe_form_wrapper .company_logo {
+        margin-top: 40px;
+    }
+    .form_overlay {
+        width: 100%;
+    }
+    .mobile_wrapper {
+        display: block;
+    }
+    .sidenav_menu .brand_logo {
+        margin-bottom: 30px;
+    }
+    .chopcafe_img img {
+        width: 100%;
+    }
+    .header_breadcrumb {
+        top: 80px;
+    }
+    /*index.html*/
+    .header_top_bar {
+        padding: 12px 0;
+    }
+    .header_top_bar .top_info {
+        text-align: center;
+        float: none;
+    }
+    .header_top_bar .top_contact_info ul li {
+        margin-left: 0px;
+        margin-right: 4px;
+    }
+    .header_demo_1 {
+        background-color: #010a19;
+        border-bottom: none;
+    }
+    .header_slider_1 {
+        padding: 50px 0 50px;
+    }
+    .welcome_content h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        line-height: 44px;
+    }
+    .welcome_content p {
+        margin-bottom: 20px;
+    }
+    .welcome_img {
+        float: none;
+        text-align: center;
+    }
+    .welcome_img img {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .chopcafe_about_1:after {
+        display: none;
+    }
+    .chopcafe_about_1 .chopcafe_content_box .about_text h2 {
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 10px;
+    }
+    .about_video_box.chopcafe_img {
+        width: 100%;
+        height: 300px;
+        padding: 0;
+    }
+    .about_video_box.chopcafe_img img {
+        width: 100%;
+        height: 100%;
+    }
+    .chopcafe_title h2 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .chopcafe_title .title_divider {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .content_title .title_divider {
+        margin: 0 0;
+        width: 400px;
+    }
+    .chopcafe_title_2 .title_divider {
+        width: 450px;
+        margin: 0 auto;
+    }
+    .chopcafe_title .title_divider:before {
+        left: 0px;
+    }
+    .chopcafe_title .title_divider:after {
+        right: 0px;
+    }
+    .chopcafe_filter .chopcafe_btn {
+        padding: 12px 10px;
+        font-size: 14px;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 15px;
+    }
+    .how_to_order_1 .grid_item {
+        margin-bottom: 50px;
+    }
+    .how_to_order_1 .item_line_2:before,
+    .how_to_order_1 .item_line:before {
+        display: none;
+    }
+    .chopcafe_food_festival .chopcafe_img_box {
+        margin-bottom: 40px;
+    }
+    .chopcafe_reservation_1 .chopcafe_img_box .chopcafe_img.reservation_img,
+    .chopcafe_reservation_4 .chopcafe_img_box .chopcafe_img.reservation_img {
+        position: relative;
+    }
+    .festival_title h3 {
+        font-size: 26px;
+    }
+    .chef_slide_1 .slick-prev,
+    .welcome_slider .slick-prev {
+        left: -100px;
+    }
+    .chef_slide_1 .slick-next,
+    .welcome_slider .slick-next {
+        right: -100px;
+    }
+    .chopcafe_content_box .festival_countdown_area .festival_countdown .counter_column {
+        height: 100px;
+        width: 100px;
+        padding-top: 30px;
+    }
+    .chopcafe_blog_1 .grid_inner_item {
+        display: block;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_img {
+        width: 100%;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_info {
+        width: 100%;
+        padding: 20px 15px 20px;
+    }
+    .footer_widget_box {
+        margin-bottom: 40px;
+    }
+    .footer_logo .brand_logo img {
+        width: 25%;
+    }
+    .footer_logo .brand_logo:before,
+    .footer_logo .brand_logo:after {
+        top: 18px;
+    }
+    .chopcafe_about_1 .chopcafe_content_box,
+    .welcome_content {
+        margin-bottom: 40px;
+    }
+    /*home_v2.html*/
+    .header_bg_1 {
+        padding: 150px 0 50px;
+    }
+    .chopcafe_why_choose_1 .chopcafe_title .title_divider,
+    .chopcafe_about_3 .chopcafe_title .title_divider {
+        width: 100%;
+    }
+    .content_title .title_divider:after {
+        right: 0;
+    }
+    .content_title .title_divider:before {
+        left: 0;
+    }
+    .chopcafe_about_2 .chopcafe_img_box {
+        text-align: center;
+    }
+    .chopcafe_about_2 .chopcafe_img_box .about_img_2_1:last-child {
+        margin-bottom: 30px;
+    }
+    .about_img_2_1 {
+        margin-bottom: 30px;
+    }
+    .about_text {
+        margin-bottom: 40px;
+    }
+    .chopcafe_fetaures_1 .chopcafe_feature_list .single_feature {
+        align-items: flex-start;
+    }
+    .chopcafe_fetaures_1 .chopcafe_img_box .fetaures_img:before {
+        display: none;
+    }
+    .chopcafe_fetaures_1 .chopcafe_img_box {
+        margin-bottom: 40px;
+    }
+    .chopcafe_chef_2 .chef_box {
+        margin-bottom: 40px;
+    }
+    .chopcafe_reservation_2 .reservation_form {
+        width: 100%;
+    }
+    /*home_v3.html*/
+    .header_slider_2:before {
+        width: 100%;
+    }
+    .header_slider_2 {
+        padding: 100px 0 60px;
+    }
+    .welcome_slider_2 .slick-dots {
+        right: -40px;
+    }
+    .welcome_slider_2 .slick-dots li.slick-active button {
+        background-color: #fff;
+    }
+    .chopcafe_service_1 {
+        margin-bottom: -60px;
+    }
+    .chopcafe_service_1 .grid_item {
+        margin-bottom: 120px;
+    }
+    .video_text {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .video_content_box_1 {
+        width: 100%;
+    }
+    .video_content_box_1 .video_text h2 {
+        font-size: 36px;
+    }
+    .chopcafe_gallery_filter .gallery_btn {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 15px;
+    }
+    .food_list_box .grid_inner_item .chopcafe_info h3 {
+        font-size: 20px;
+    }
+    .chopcafe_reservation_3 .reservation_form .form_bg {
+        padding: 30px;
+    }
+    .chopcafe_reservation_3 .reservation_form .nice-select.selectoption {
+        margin-bottom: 30px;
+    }
+    .chopcafe_map_box {
+        margin-bottom: 40px;
+    }
+    /*404.html*/
+    .error_content h2 {
+        font-size: 190px;
+    }
+    /*about.html*/
+    .food_slider_1 .food_grid_box .grid_inner_item .chopcafe_info h3 span,
+    .food_slider_1 .food_grid_box .grid_inner_item .chopcafe_info h3 {
+        font-size: 14px;
+    }
+    .chopcafe_about_3 .about_img_3 {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 40px;
+    }
+    .chopcafe_project_counter .counter_box {
+        margin-bottom: 40px;
+    }
+    /*blog_2_column.html*/
+    .chopcafe_blog_3_column .grid_inner_item .chopcafe_info .post_meta ul li:after {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .tags_box ul li a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .chopcafe_pagination {
+        margin-bottom: 40px;
+    }
+    /*menu_v1.html*/
+    .chopcafe_menu_tab .nav-item {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    /*cart.html*/
+    .chopcafe_product_table {
+        overflow-x: auto;
+        width: 100%;
+    }
+    .continue_shopping {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .chopcafe_update_cart .update_cart {
+        float: none;
+        text-align: center;
+    }
+    .continue_shopping .chopcafe_btn,
+    .chopcafe_update_cart .update_cart .chopcafe_btn {
+        width: 100%;
+        font-size: 14px;
+    }
+    .chopcafe_update_cart .update_cart a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .cupon_box .chopcafe_btn {
+        position: relative;
+        right: 0;
+        top: 20px;
+        width: 100%;
+    }
+    .payment_confirm .single_checkbox {
+        margin-bottom: 25px;
+    }
+    .cupon_box .form_control {
+        height: 50px;
+        padding: 20px 10px;
+    }
+    .checkout_form .selectoption.nice-select,
+    .shipping_form .nice-select.selectoption {
+        width: 100%;
+    }
+    /*contact.html*/
+    .chopcafe_cart_total,
+    .contact_information_area .social_widget_box {
+        margin-bottom: 40px;
+    }
+    /*festival.html*/
+    .video_content_box,
+    .chopcafe_festival_attend .counter_box_2 {
+        margin-bottom: 40px;
+    }
+    /*Single_blog.html*/
+    .single_blog_main .post_text .chopcafe_blockquote {
+        margin-left: 0;
+    }
+    .single_blog_main .post_share_tag .post_tag {
+        margin-bottom: 10px;
+    }
+    .single_blog_main .post_share_tag .post_share ul li:first-child,
+    .single_blog_main .post_share_tag .post_tag ul li:first-child {
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+    .single_blog_main .post_share_tag .post_share ul li {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .single_blog_main .post_share_tag .post_tag ul li a {
+        padding: 6px 18px;
+    }
+    .post_comment .single_comment {
+        margin-bottom: 35px;
+        display: block !important;
+    }
+    .post_comment .author_text {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    .post_comment .single_comment:nth-child(odd) {
+        margin-left: 40px;
+    }
+    /*login.html*/
+    .chopcafe_form_wrapper .form_wrapper {
+        padding: 40px 15px;
+    }
+    /*shop_grid.html*/
+    .food_grid_box .grid_inner_item .overlay_content a.btn_a {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .pagination_list ul li {
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+    .pagination_list ul li a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*shop_details.html*/
+    .breadcrumb_content h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .gallery_small {
+        margin-bottom: 40px;
+    }
+    .shop_filter .shop_link ul li {
+        margin-right: 18px;
+    }
+    .shop_filter .shop_link ul li a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info h3 {
+        margin-bottom: 10px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info span.price {
+        margin-bottom: 10px;
+    }
+    .chopcafe_list_shop .grid_inner_item {
+        display: block;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_img {
+        width: 100%;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info {
+        width: 100%;
+        padding: 23px 30px 23px 31px;
+        border: 1px solid #8dc73f;
+        border-top: none;
+    }
+    .chopcafe_product_tab .nav-tabs .nav-link {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    .review_area .single_review {
+        display: block;
+    }
+    .review_area .single_review .author_text {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    #product_discription ul li {
+        margin-bottom: 15px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info ul {
+        margin-bottom: 10px;
+    }
+    /*single_team.html*/
+    .chopcafe_single_team .chopcafe_img {
+        margin-bottom: 60px;
+    }
+    /*thanks.html*/
+    .chopcafe_thanks_content h2 {
+        font-size: 55px;
+    }
+    .chopcafe_cart_total,
+    .shipping_content_box,
+    .chopcafe_cart_note {
+        margin-bottom: 40px;
+    }
+    .chopcafe_shoping_cupon h4 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .chopcafe_shoping_cupon {
+        text-align: center;
+    }
+    .coupon_box .chopcafe_btn {
+        position: relative;
+        margin-top: 30px;
+    }
+    .chopcafe_checkout .form_button {
+        margin-top: 40px;
+    }
+    .reservation_img {
+        display: none;
+    }
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 767px) {
+    .site_menu {
+        display: none;
+    }
+    .gallery_small .single_img {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .form_overlay {
+        width: 100%;
+    }
+    .chopcafe_form_wrapper .company_logo {
+        margin-top: 40px;
+    }
+    .mobile_wrapper {
+        display: block;
+    }
+    .mobile_wrapper .mobile_menu ul li.cart_icon ul.site-header-cart {
+        width: 250px;
+    }
+    .sidenav_menu .brand_logo {
+        margin-bottom: 30px;
+    }
+    .chopcafe_img img {
+        width: 100%;
+    }
+    .header_breadcrumb {
+        top: 76px;
+    }
+    /*index.html*/
+    .header_top_bar {
+        padding: 12px 0;
+    }
+    .header_top_bar .top_info {
+        text-align: center;
+        float: none;
+    }
+    .top_social ul.social_link li {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .header_top_bar .top_contact_info ul li {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .mini-cart-item .product_thumb {
+        max-width: 40px;
+    }
+    .mini-cart-item .product_name {
+        width: 120px;
+        margin-left: 10px;
+    }
+    .product_name .product_title {
+        font-size: 14px;
+    }
+    .header_demo_1 {
+        background-color: #010a19;
+        border-bottom: none;
+    }
+    .header_slider_1 {
+        padding: 50px 0 50px;
+    }
+    .welcome_content {
+        text-align: center;
+    }
+    .welcome_content h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+        line-height: 40px;
+    }
+    .welcome_content p {
+        margin-bottom: 20px;
+    }
+    .chopcafe_about_1:after {
+        display: none;
+    }
+    .chopcafe_about_1 .chopcafe_content_box .about_text h2 {
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 10px;
+    }
+    .about_video_box.chopcafe_img {
+        width: 100%;
+        height: 300px;
+        padding: 0;
+    }
+    .about_video_box.chopcafe_img img {
+        width: 100%;
+        height: 100%;
+    }
+    .chopcafe_title .title_divider {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .chopcafe_title h2 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .chopcafe_title .title_divider:before {
+        left: 0;
+    }
+    .chopcafe_title .title_divider:after {
+        right: 0;
+    }
+    .chopcafe_title .title_divider:before,
+    .chopcafe_title .title_divider:after {
+        width: 130px;
+    }
+    .chopcafe_filter .chopcafe_btn {
+        padding: 12px 10px;
+        font-size: 14px;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 15px;
+    }
+    .how_to_order_1 .grid_item {
+        margin-bottom: 40px;
+    }
+    .how_to_order_1 .item_line_2:before,
+    .how_to_order_1 .item_line:before {
+        display: none;
+    }
+    .chopcafe_reservation_1 .chopcafe_img_box .chopcafe_img.reservation_img,
+    .chopcafe_reservation_4 .chopcafe_img_box .chopcafe_img.reservation_img {
+        position: relative;
+    }
+    .reservation_img {
+        display: none;
+    }
+    .festival_title h3 {
+        font-size: 26px;
+    }
+    .chef_slide_1 .slick-prev,
+    .welcome_slider .slick-prev {
+        left: -100px;
+    }
+    .chef_slide_1 .slick-next,
+    .welcome_slider .slick-next {
+        right: -100px;
+    }
+    .chopcafe_food_festival .chopcafe_img_box {
+        margin-bottom: 40px;
+    }
+    .chopcafe_content_box .festival_countdown_area .festival_countdown .counter_column {
+        height: 70px;
+        width: 70px;
+        padding-top: 10px;
+    }
+    .chopcafe_blog_1 .grid_inner_item {
+        display: block;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_img {
+        width: 100%;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_info {
+        width: 100%;
+    }
+    .chopcafe_blog_1 .grid_inner_item .chopcafe_info h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .footer_widget_box {
+        margin-bottom: 40px;
+    }
+    .footer_logo .brand_logo img {
+        width: 25%;
+    }
+    .footer_logo .brand_logo:before,
+    .footer_logo .brand_logo:after {
+        top: 13px;
+    }
+    .copyright_text {
+        text-align: center;
+    }
+    .copyright_text.float-right {
+        float: none !important;
+        text-align: center;
+    }
+    .chopcafe_about_1 .chopcafe_content_box,
+    .welcome_content {
+        margin-bottom: 40px;
+    }
+    /*home_v2.html*/
+    .content_title .title_divider {
+        width: 300px !important;
+        margin: 0 0;
+    }
+    .header_bg_1 {
+        padding: 150px 0 50px;
+    }
+    .content_title .title_divider:after,
+    .content_title .title_divider:before {
+        width: 130px;
+    }
+    .chopcafe_about_2 .chopcafe_img_box {
+        text-align: center;
+    }
+    .about_img_2_1 {
+        margin-bottom: 30px;
+    }
+    .about_text {
+        margin-bottom: 40px;
+    }
+    .chopcafe_fetaures_1 .chopcafe_feature_list .single_feature {
+        display: block;
+        text-align: center;
+    }
+    .chopcafe_fetaures_1 .chopcafe_feature_list .single_feature .chopcafe_icon i {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .chopcafe_fetaures_1 .chopcafe_img_box .fetaures_img:before {
+        display: none;
+    }
+    .chopcafe_fetaures_1 .chopcafe_img_box {
+        margin-bottom: 40px;
+    }
+    .chopcafe_menu_2 .food_list_box .grid_inner_item {
+        padding: 20px 20px 15px;
+        display: block;
+    }
+    .chopcafe_menu_2 .overlay_content {
+        display: none;
+    }
+    .chopcafe_menu_2 .food_list_box .grid_inner_item .chopcafe_img {
+        width: 100%;
+    }
+    .chopcafe_menu_2 .food_list_box .grid_inner_item .chopcafe_info {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+    .chopcafe_chef_2 .chef_box {
+        margin-bottom: 40px;
+    }
+    .chopcafe_reservation_2 .reservation_form {
+        width: 100%;
+    }
+    /*home_v3.html*/
+    .header_slider_2:before {
+        width: 100%;
+    }
+    .header_slider_2 {
+        padding: 100px 0 60px;
+    }
+    .welcome_slider_2 .slick-dots {
+        right: -40px;
+    }
+    .welcome_slider_2 .slick-dots li.slick-active button {
+        background-color: #fff;
+    }
+    .chopcafe_service_1 {
+        margin-bottom: -60px;
+    }
+    .chopcafe_service_1 .grid_item {
+        margin-bottom: 120px;
+    }
+    .video_content_box_1 {
+        width: 100%;
+    }
+    .video_content_box_1 .video_text h2 {
+        font-size: 36px;
+    }
+    .chopcafe_gallery_filter .gallery_btn {
+        margin-bottom: 15px;
+    }
+    .chopcafe_menu_3 .chopcafe_menu_item_box .grid_inner_item .chopcafe_img {
+        width: 60%;
+    }
+    .chopcafe_menu_3 .chopcafe_menu_item_box .grid_inner_item .chopcafe_info {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .food_list_box .grid_inner_item .chopcafe_info h3 {
+        font-size: 20px;
+    }
+    .chopcafe_menu_3 .chopcafe_menu_item_box .food_list_box .grid_inner_item {
+        display: block;
+    }
+    .chopcafe_reservation_3 .reservation_form .form_bg {
+        padding: 30px;
+    }
+    .chopcafe_reservation_3 .reservation_form .nice-select.selectoption {
+        margin-bottom: 30px;
+    }
+    .chopcafe_map_box {
+        margin-bottom: 40px;
+    }
+    /*404.html*/
+    .error_content h2 {
+        font-size: 190px;
+    }
+    /*about.html*/
+    .chopcafe_about_3 .about_img_3 {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 40px;
+    }
+    .chopcafe_project_counter .counter_box {
+        margin-bottom: 40px;
+    }
+    /*blog_2_column.html*/
+    .chopcafe_blog_3_column .grid_inner_item .chopcafe_info .post_meta ul li:after {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .tags_box ul li a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .chopcafe_pagination {
+        margin-bottom: 40px;
+    }
+    /*cart.html*/
+    .chopcafe_product_table {
+        overflow-x: auto;
+        width: 100%;
+    }
+    .continue_shopping {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .cupon_box .form_control {
+        height: 50px;
+        padding: 20px 10px;
+    }
+    .chopcafe_update_cart .update_cart {
+        float: none;
+        text-align: center;
+    }
+    .checkout_form .selectoption.nice-select,
+    .shipping_form .nice-select.selectoption {
+        width: 100%;
+    }
+    .continue_shopping .chopcafe_btn,
+    .chopcafe_update_cart .update_cart .chopcafe_btn {
+        width: 100%;
+        font-size: 12px;
+    }
+    .chopcafe_update_cart .update_cart a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .cupon_box .chopcafe_btn {
+        position: relative;
+        right: 0;
+        top: 20px;
+        width: 100%;
+    }
+    .payment_confirm .single_checkbox {
+        margin-bottom: 25px;
+    }
+    /*contact.html*/
+    .chopcafe_cart_total,
+    .contact_information_area .social_widget_box {
+        margin-bottom: 40px;
+    }
+    /*festival.html*/
+    .video_content_box,
+    .chopcafe_festival_attend .counter_box_2 {
+        margin-bottom: 40px;
+    }
+    /*Single_blog.html*/
+    .single_blog_main .post_meta ul li img {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .single_blog_main .post_meta {
+        margin-bottom: 20px;
+    }
+    .single_blog_main .post_text {
+        margin-top: 20px;
+    }
+    .single_blog_main .post_meta ul li {
+        font-size: 12px;
+    }
+    .single_blog_main .post_meta ul li:after {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .single_blog_main .post_text .chopcafe_blockquote {
+        margin-left: 0;
+    }
+    .single_blog_main .post_share_tag .post_tag {
+        margin-bottom: 10px;
+    }
+    .single_blog_main .post_share_tag .post_share ul li:first-child,
+    .single_blog_main .post_share_tag .post_tag ul li:first-child {
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+    .single_blog_main .post_share_tag .post_share ul li {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .single_blog_main .post_share_tag .post_tag ul li a {
+        padding: 6px 12px;
+    }
+    .single_blog_main .post_share_tag .post_share {
+        float: none;
+    }
+    .post_comment .single_comment {
+        margin-bottom: 35px;
+        display: block !important;
+    }
+    .post_comment .author_text {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    .post_comment .single_comment:nth-child(odd) {
+        margin-left: 40px;
+    }
+    /*login.html*/
+    .chopcafe_form_wrapper .form_wrapper {
+        padding: 40px 15px;
+    }
+    /*menu_v1.html*/
+    .chopcafe_menu_4 .food_list_box .grid_inner_item {
+        display: block;
+    }
+    .chopcafe_menu_4 .food_list_box .grid_inner_item .chopcafe_info {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .chopcafe_menu_tab .nav-item {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    /*shop_grid.html*/
+    .food_grid_box .grid_inner_item .overlay_content a.btn_a {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .pagination_text {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .pagination_list {
+        float: none;
+        text-align: center;
+    }
+    .pagination_list ul li {
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+    .pagination_list ul li a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*shop_details.html*/
+    .breadcrumb_content h2 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+    .gallery_small {
+        margin-bottom: 40px;
+    }
+    .shop_filter .shop_link ul li {
+        margin-right: 18px;
+    }
+    .shop_filter .shop_link ul li a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    .shop_sort {
+        float: none;
+        margin-top: 30px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info h3 {
+        margin-bottom: 10px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info span.price {
+        margin-bottom: 10px;
+    }
+    .chopcafe_list_shop .grid_inner_item {
+        display: block;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info {
+        width: 100%;
+        padding: 23px 30px 23px 31px;
+        border: 1px solid #8dc73f;
+        border-top: none;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_img {
+        width: 100%;
+    }
+    .chopcafe_product_tab .nav-tabs .nav-link {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    .review_area .single_review {
+        display: block;
+    }
+    .review_area .single_review .author_text {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    #product_discription ul li {
+        margin-bottom: 15px;
+    }
+    .chopcafe_list_shop .grid_inner_item .chopcafe_info ul {
+        margin-bottom: 10px;
+    }
+    /*single_team.html*/
+    .chopcafe_single_team .chopcafe_img {
+        margin-bottom: 60px;
+    }
+    /*thanks.html*/
+    .chopcafe_thanks_content h2 {
+        font-size: 55px;
+    }
+    .chopcafe_cart_total,
+    .shipping_content_box,
+    .chopcafe_cart_note {
+        margin-bottom: 40px;
+    }
+    .chopcafe_shoping_cupon h4 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .chopcafe_shoping_cupon {
+        text-align: center;
+    }
+    .coupon_box .chopcafe_btn {
+        position: relative;
+        margin-top: 30px;
+    }
+    .chopcafe_checkout .form_button {
+        margin-top: 40px;
+    }
+    .product_details_area form button.cart_btn {
+        margin-left: 15px;
+    }
+    .shop_filter .shop_sort .selectoption.nice-select {
+        width: 100%;
+    }
+    .shop_filter .shop_link ul {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+    .blog_standard_main .grid_item .chopcafe_info .post_meta ul li:before,
+    .chopcafe_blog_2_column .grid_item .chopcafe_info .post_meta ul li:before {
+        margin-left: 7px;
+        margin-right: 10px;
+    }
+    .chopcafe_blog_3_column .grid_inner_item .chopcafe_info ul li a {
+        font-size: 12px;
+    }
+    .chopcafe_content_box .festival_countdown_area .festival_countdown .counter_column .inner {
+        font-size: 10px;
+    }
+}
+
+/* Extra small Mobile Devices, Tablets */
+
+@media only screen and (min-width: 1px) and (max-width: 320px) {
+    .header_breadcrumb {
+        top: 103px;
+    }
+    .welcome_content h1 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .header_bg_1 .welcome_content h3 {
+        font-size: 30px;
+    }
+    .form_title h4 {
+        font-size: 14px;
+    }
+    .mobile_wrapper .mobile_menu ul li.cart_icon ul.site-header-cart {
+        width: 250px;
+    }
+    .food_grid_box .grid_inner_item .overlay_content {
+        display: none;
+    }
+    .chopcafe_list_shop .food_list_box .grid_inner_item .overlay_content {
+        display: none;
+    }
+    .tags_box ul li a {
+        padding: 10px 10px;
+    }
+    .copyright_text p {
+        font-size: 12px;
+    }
+    .product_details_area form button.cart_btn {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .chopcafe_blog_3_column .grid_inner_item .chopcafe_info ul li a {
+        font-size: 10px;
+    }
+    .blog_standard_main .grid_item .chopcafe_info .post_meta ul li a,
+    .chopcafe_blog_2_column .grid_item .chopcafe_info .post_meta ul li a {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Devices, Tablets */
+
+@media only screen and (min-width: 450px) and (max-width: 767px) {
+    .header_top_bar .top_contact_info ul li {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+    .content_title .title_divider {
+        width: 400px;
+    }
+}
