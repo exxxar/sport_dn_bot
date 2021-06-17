@@ -72,7 +72,7 @@ class StartDataConversation extends Conversation
 
         $keyboard = [];
 
-        array_push($keyboard, ["\xF0\x9F\x8D\xB1Новое меню"]);
+        array_push($keyboard, ["\xE2\x9A\xA1Акции и мероприятия", "\xE2\x98\x95Услуги"]);
         if (!$user->is_vip)
             array_push($keyboard, ["\xE2\x9A\xA1Анкета VIP-пользователя"]);
         else
