@@ -310,7 +310,7 @@ $botman->hears('.*Special CashBack system', function ($bot) {
         return;
     }
 
-    $message = sprintf("У вас *%s* руб.!\n_Для начисления CashBack при оплате за меню дайте отсканировать данный QR-код сотруднику_ *ISUSHI!*", $cashback);
+    $message = sprintf("У вас *%s* руб.!\n_Для начисления CashBack при оплате за меню дайте отсканировать данный QR-код сотруднику_ *Body Master!*", $cashback);
     $keyboard = [
         [
             ['text' => "Мой бюджет", 'callback_data' => "/my_money"],
@@ -345,7 +345,7 @@ $botman->hears('.*Special CashBack system', function ($bot) {
             ['text' => "Воспользоваться системой CashBack", 'url' => "https://t.me/" . env("APP_BOT_NAME") . "?start=$code"],
         ],
         [
-            ['text' => "Подробности на сайте", 'url' => "https://isushi-dn.ru"],
+            ['text' => "Подробности на сайте", 'url' => "https://Body Master-dn.ru"],
         ],
     ];
 
@@ -572,8 +572,8 @@ $botman->receivesImages(function ($bot, $images) {
 
     $keyboard = [
         [
-            ['text' => "Подтвердить", 'url' => "https://t.me/isushibot?start=$code_accept"],
-            ['text' => "Отклонить", 'url' => "https://t.me/isushibot?start=$code_decline"],
+            ['text' => "Подтвердить", 'url' => "https://t.me/Body Masterbot?start=$code_accept"],
+            ['text' => "Отклонить", 'url' => "https://t.me/Body Masterbot?start=$code_decline"],
         ],
     ];
 
