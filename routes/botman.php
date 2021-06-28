@@ -392,8 +392,8 @@ $botman->hears('.*Special CashBack system', function ($bot) {
     $bot->sendRequest("sendPhoto",
         [
             "chat_id" => "$id",
-            "photo" => "https://psv4.userapi.com/c856324/u14054379/docs/d11/b44982ee5be8/cashback.png?extra=mpOQonv9nnoVOvkOde1vMX1R7Gn6sGBpT-yTsiOl_GyeIut9zHnt3YIxH77gwLS4cyu85tEEC4UjPd6fcmunhQWmH3kzjwbgWXb7Ithm9ik8yyTuPfrYNqoLOgYLjrIzmGYUhxEQKxoQ-C6EDqUtNQ",
-            "caption" => "Теперь ты можешь получать 10% CashBack от всех твоих покупок и 3% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_",
+            "photo" => "https://sun9-18.userapi.com/impg/i-pNPcWSshCsok7CC5UTo6p8x1UcshDEsrFqjw/wvrQz72AC-o.jpg?size=1160x500&quality=96&sign=058649ec4aa3d60a40141ea102d6d69f&type=album",
+            "caption" => "Теперь ты можешь получать 10% CashBack от всех твоих покупок и 5% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_",
             "parse_mode" => "Markdown",
             'reply_markup' => json_encode([
                 'inline_keyboard' =>
