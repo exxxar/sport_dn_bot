@@ -237,21 +237,26 @@ $botman->hears('/working (on|off)', function ($bot,$working) {
 });
 
 $botman->hears('.*О нас', function ($bot) {
-    $bot->reply("https://telegra.ph/O-Nas-06-21");
+    $bot->reply("https://telegra.ph/Body-Master--Doneck--Makeevka-06-28");
 });
+
+$botman->hears('.*Акции и мероприятия', function ($bot) {
+    $bot->reply("https://telegra.ph/Body-Master--Doneck--Makeevka-06-28-2");
+});
+
 
 $botman->hears("/start ([0-9a-zA-Z=]+)", BotManController::class . '@startDataConversation');
 
 $botman->hears('/start', function ($bot) {
     createUser($bot);
-    mainMenu($bot, 'Главное меню');
+    mainMenu($bot, 'BODY MASTER - территория красивого и здорового тела, хорошего настроения и заряда энергией⚡');
 })->stopsConversation();
 
 $botman->hears('.*Услуги', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
 
-    $media = [
+   /* $media = [
         ["type" => "photo", "media" => "https://sun9-21.userapi.com/c857616/v857616755/2355ee/jY6DlCvQnk8.jpg"],
         ["type" => "photo", "media" => "https://sun9-49.userapi.com/c857616/v857616755/2355f8/tBvlw3739EY.jpg"],
         ["type" => "photo", "media" => "https://sun9-74.userapi.com/c857616/v857616755/235602/6CpGc4O7hL4.jpg"],
@@ -272,8 +277,43 @@ $botman->hears('.*Услуги', function ($bot) {
             "parse_mode" => "Markdown",
             "media" => json_encode($media),
 
-        ]);
+        ]);*/
 
+   $bot->sendRequest("sendMessage",[
+       "chat_id"=>"$id",
+       "parse_mode"=>"Markdown",
+       "text"=>"*Услуги | Стоимость*
+
+~ 8 тренировок | 1000₽
+~ 12 тренировок | 1200 ₽
+~ безлимит (месяц) | 1800₽
+
+•• ДНЕВНОЙ (11:00-15:00)
+
+~ 8 тр | 700₽
+~ 12 тр | 850₽
+~ безлимит | 1400₽
+~ гостевой визит | 200₽
+
+~ 3 мес. | 4900₽ 1 мес. = 1633₽
+~ 6 мес. | 8600₽ 1 мес. = 1434₽
+~ Годовой (+2 в 🎁 = 14 мес.) | 14000₽ (1 мес. = 1000₽)
+~ семейный* | -15% от стоимости абонемента
+
+1 ПТ* = 500₽ (🔝 тренер)
+*персональная тренировка с тренером
+
+~ 10 ПТ | 4000₽ / 3000₽
+~ СПЛИТ (2 чел., 10 ПТ) | 6800₽ / 5100₽ (1чел.=3400₽ / 2550₽)**
+
+~ ГРУПА ПТ 3-5 чел = 3700₽
+
+~ CROSS FIT
+ • 8 тр = 1200₽
+ • 12 тр = 1600₽
+✔️ 1 тр = 300₽ (присоединиться к группе, гостевой визит)
+       "
+   ]);
 
 });
 $botman->hears('.*Special CashBack system', function ($bot) {
@@ -345,7 +385,7 @@ $botman->hears('.*Special CashBack system', function ($bot) {
             ['text' => "Воспользоваться системой CashBack", 'url' => "https://t.me/" . env("APP_BOT_NAME") . "?start=$code"],
         ],
         [
-            ['text' => "Подробности на сайте", 'url' => "https://Body Master-dn.ru"],
+            ['text' => "Подробности на сайте", 'url' => "https://body-master.ru"],
         ],
     ];
 
