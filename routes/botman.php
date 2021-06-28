@@ -281,8 +281,8 @@ $botman->hears('.*Услуги', function ($bot) {
 
    $bot->sendRequest("sendMessage",[
        "chat_id"=>"$id",
-       "parse_mode"=>"Markdown",
-       "text"=>"*Услуги | Стоимость*
+       "parse_mode"=>"HTML",
+       "text"=>"Услуги | Стоимость
 
 ~ 8 тренировок | 1000₽
 ~ 12 тренировок | 1200 ₽
