@@ -177,9 +177,9 @@ $botman->hears('.*Админ. статистика', function ($bot) {
         [
             ['text' => !$is_working ? "Я работаю!" : "Я не работаю!", 'callback_data' => "/working " . ($is_working ? "on" : "off")]
         ]
-       /* [
-            ['text' => "Статистика в PDF", 'callback_data' => "/get_statistic_pdf"]
-        ],*/
+        /* [
+             ['text' => "Статистика в PDF", 'callback_data' => "/get_statistic_pdf"]
+         ],*/
 
     ];
     $bot->sendRequest("sendMessage",
@@ -194,7 +194,6 @@ $botman->hears('.*Админ. статистика', function ($bot) {
         ]);
 
 })->stopsConversation();
-
 
 
 $botman->hears(".*Анкета VIP-пользователя|/do_vip", BotManController::class . "@vipConversation");
@@ -527,7 +526,7 @@ $botman->hears('/cashback_up', function ($bot) {
         ]);
 });
 
-$botman->hears('*.Администраторы|/admins', function ($bot) {
+$botman->hears('/admins', function ($bot) {
 
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
@@ -578,7 +577,6 @@ $botman->hears('*.Администраторы|/admins', function ($bot) {
 
 });
 
-
 $botman->hears('/cashback_down', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
@@ -625,7 +623,6 @@ $botman->hears('/cashback_down', function ($bot) {
             ])
         ]);
 });
-
 
 $botman->receivesImages(function ($bot, $images) {
     $telegramUser = $bot->getUser();
