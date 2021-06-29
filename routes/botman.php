@@ -196,7 +196,7 @@ $botman->hears('.*Админ. статистика', function ($bot) {
 })->stopsConversation();
 
 
-$botman->hears(".*Анкета VIP-пользователя|/do_vip", BotManController::class . "@vipConversation");
+$botman->hears(".*Анкета VIP-пользователя|/do_vip", BotManController::class . "@vipConversation")->stopsConversation();
 $botman->hears('.*Розыгрыш', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
@@ -241,11 +241,11 @@ $botman->hears('/working (on|off)', function ($bot, $working) {
 
 $botman->hears('.*О нас', function ($bot) {
     $bot->reply("https://telegra.ph/Uslugi--Stoimost-06-29");
-});
+})->stopsConversation();
 
 $botman->hears('.*Акции и мероприятия', function ($bot) {
     $bot->reply("https://telegra.ph/Body-Master--Doneck--Makeevka-06-28-2");
-});
+})->stopsConversation();
 
 
 $botman->hears("/start ([0-9a-zA-Z=]+)", BotManController::class . '@startDataConversation');
@@ -318,7 +318,7 @@ $botman->hears('.*Услуги', function ($bot) {
        "
     ]);
 
-});
+})->stopsConversation();
 $botman->hears('.*Special CashBack system', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
@@ -415,7 +415,7 @@ $botman->hears('.*Special CashBack system', function ($bot) {
             ])
         ]);
 
-});
+})->stopsConversation();
 $botman->hears('/lottery', BotManController::class . '@lotteryConversation');
 $botman->hears('/check_lottery_slot ([0-9]+)', function ($bot, $slotId) {
 
@@ -575,7 +575,7 @@ $botman->hears('/admins', function ($bot) {
     }
 
 
-});
+})->stopsConversation();
 
 $botman->hears('/cashback_down', function ($bot) {
     $telegramUser = $bot->getUser();
