@@ -41,15 +41,15 @@ class VipConversation extends Conversation
         return $user;
     }
 
-    function mainMenu( $message)
+    function mainMenu($message)
     {
         $telegramUser = $this->bot->getUser();
         $id = $telegramUser->getId();
 
-        $user = User::where("telegram_chat_id",$id)->first();
+        $user = User::where("telegram_chat_id", $id)->first();
 
         if (is_null($user))
-            $user=$this->createUser();
+            $user = $this->createUser();
 
 
         $keyboard = [
@@ -62,7 +62,7 @@ class VipConversation extends Conversation
         else
             array_push($keyboard, ["\xE2\x9A\xA1Special CashBack system"]);
 
-        array_push($keyboard,["\xF0\x9F\x92\xADО Нас"]);
+        array_push($keyboard, ["\xF0\x9F\x92\xADО Нас"]);
 
         $this->bot->sendRequest("sendMessage",
             [
@@ -85,6 +85,38 @@ class VipConversation extends Conversation
     }
 
 
+    public function askName()
+    {
+        $question = Question::create('Как вас зовут?')
+            ->fallback('Спасибо что пообщался со мной:)!');
+
+        $this->ask($question, function (Answer $answer) {
+            $tmp_name = $answer->getText();
+
+            $this->user->fio_from_telegram = $tmp_name ?? $this->user->fio_from_telegram;
+            $this->save();
+
+            $this->askBirthday();
+        });
+    }
+
+
+    public function askBirthday()
+    {
+        $question = Question::create('Введите дату совего рожедения и получайте бонусы!')
+            ->fallback('Спасибо что пообщался со мной:)!');
+
+        $this->ask($question, function (Answer $answer) {
+            $tmp_birth = $answer->getText();
+
+            $this->user->birthday = $tmp_birth ?? '01.01.1900';
+            $this->save();
+
+            $this->skPhone();
+        });
+
+    }
+
     public function askPhone()
     {
         $question = Question::create('Скажие мне свой телефонный номер в формате 071XXXXXXX')
@@ -105,11 +137,10 @@ class VipConversation extends Conversation
                 $this->askPhone();
                 return;
             } else {
-                $tmp_user = User::where("phone",$tmp_phone)->first();
+                $tmp_user = User::where("phone", $tmp_phone)->first();
 
-                if (!is_null($tmp_user))
-                {
-                    if (!is_null($tmp_user->telegram_chat_id)){
+                if (!is_null($tmp_user)) {
+                    if (!is_null($tmp_user->telegram_chat_id)) {
                         $this->bot->reply("Данный номер уже связан с учетной записью телеграм!\n");
                         $this->askPhone();
                         return;
@@ -121,19 +152,19 @@ class VipConversation extends Conversation
                 }
                 $this->user->phone = $tmp_phone;
                 $this->user->is_vip = true;
-               // $this->user->cashback_money +=100 ;
+                // $this->user->cashback_money +=100 ;
                 $this->user->save();
 
-             /*   CashBackHistory::create([
-                    'amount'=>100,
-                    'bill_number'=>'Gift From Isushi',
-                    'money_in_bill'=>0,
-                    'employee_id'=>null,
-                    'user_id'=>$this->user->id,
-                    'type'=>0,
-                ]);
+                /*   CashBackHistory::create([
+                       'amount'=>100,
+                       'bill_number'=>'Gift From Isushi',
+                       'money_in_bill'=>0,
+                       'employee_id'=>null,
+                       'user_id'=>$this->user->id,
+                       'type'=>0,
+                   ]);
 
-                $this->bot->reply("Вам начислено 100 руб. CashBack");*/
+                   $this->bot->reply("Вам начислено 100 руб. CashBack");*/
 
                 $this->mainMenu("Теперь Вы VIP-пользователь и у вас есть возможность накапливать CashBack!");
 
@@ -151,7 +182,7 @@ class VipConversation extends Conversation
     {
         //
         if (!$this->user->is_vip)
-            $this->askPhone();
+            $this->askName();
 
     }
 }
