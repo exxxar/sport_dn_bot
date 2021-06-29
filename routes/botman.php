@@ -684,7 +684,7 @@ $botman->fallback(function ($bot) {
 
                         ]
                     ],
-                    'thumb_url' => "https://sun2.48276.userapi.com/c855720/v855720573/191059/_kdC1Xs6xCA.jpg?ava=1",
+                    'thumb_url' => "https://sun9-56.userapi.com/impg/YVDBJLBg3mb3-4YtMq39ttw44YK6bJ5es82crQ/u-NDgH2nL7g.jpg?size=500x500&quality=96&sign=17ecd1cd62402db7d35842d45047c28c&type=album",
                     'url' => env("APP_URL"),
                     'description' => sprintf("Администратор #%s %s (%s)", $user->id, ($user->fio_from_telegram ?? $user->name), ($user->phone ?? 'Без телефона')),
                     'hide_url' => true
