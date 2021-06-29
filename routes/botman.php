@@ -176,7 +176,7 @@ $botman->hears('.*Админ. статистика', function ($bot) {
     $keybord = [
         [
             ['text' => !$is_working ? "Я работаю!" : "Я не работаю!", 'callback_data' => "/working " . ($is_working ? "on" : "off")]
-        ],
+        ]
        /* [
             ['text' => "Статистика в PDF", 'callback_data' => "/get_statistic_pdf"]
         ],*/
@@ -241,7 +241,7 @@ $botman->hears('/working (on|off)', function ($bot, $working) {
 });
 
 $botman->hears('.*О нас', function ($bot) {
-    $bot->reply("https://telegra.ph/Body-Master--Doneck--Makeevka-06-28");
+    $bot->reply("https://telegra.ph/Uslugi--Stoimost-06-29");
 });
 
 $botman->hears('.*Акции и мероприятия', function ($bot) {
@@ -577,6 +577,8 @@ $botman->hears('*.Администраторы|/admins', function ($bot) {
 
 
 });
+
+
 $botman->hears('/cashback_down', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
