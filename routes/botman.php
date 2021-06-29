@@ -87,7 +87,7 @@ function mainMenu($bot, $message)
     if (!$user->is_vip)
         array_push($keyboard, ["\xE2\x9A\xA1Анкета VIP-пользователя"]);
     else
-        array_push($keyboard, ["\xE2\x9A\xA1Special CashBack system"]);
+        array_push($keyboard, ["\xE2\x9A\xA1CASH BACK system"]);
 
     /*    array_push($keyboard,["\xF0\x9F\x8E\xB0Розыгрыш"]);*/
     array_push($keyboard, ["\xF0\x9F\x92\xADО Нас"]);
@@ -259,7 +259,7 @@ $botman->hears('.*Услуги', function ($bot) {
     $bot->reply("https://telegra.ph/USLUGI--STOIMOST-06-29-2");
 })->stopsConversation();
 
-$botman->hears('.*Special CashBack system', function ($bot) {
+$botman->hears('.*CASH BACK system|.*Special CashBack system', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
 
@@ -331,11 +331,10 @@ $botman->hears('.*Special CashBack system', function ($bot) {
         ],
     ];
 
-    $bot->sendRequest("sendPhoto",
+    $bot->sendRequest("sendMessage",
         [
             "chat_id" => "$id",
-            "photo" => "https://sun9-18.userapi.com/impg/i-pNPcWSshCsok7CC5UTo6p8x1UcshDEsrFqjw/wvrQz72AC-o.jpg?size=1160x500&quality=96&sign=058649ec4aa3d60a40141ea102d6d69f&type=album",
-            "caption" => "Теперь ты можешь получать 10% CashBack от всех твоих покупок и 5% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_",
+            "text" => sprintf("%s\n%s","Теперь ты можешь получать 10% CashBack от всех твоих покупок и 5% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_","https://telegra.ph/CASH-BACK-SYSTEM-06-29"),
             "parse_mode" => "Markdown",
             'reply_markup' => json_encode([
                 'inline_keyboard' =>
