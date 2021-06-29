@@ -112,7 +112,7 @@ class VipConversation extends Conversation
             $this->user->birthday = $tmp_birth ?? '01.01.1900';
             $this->user->save();
 
-            $this->skPhone();
+            $this->askPhone();
         });
 
     }
