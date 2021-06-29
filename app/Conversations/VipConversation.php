@@ -94,7 +94,7 @@ class VipConversation extends Conversation
             $tmp_name = $answer->getText();
 
             $this->user->fio_from_telegram = $tmp_name ?? $this->user->fio_from_telegram;
-            $this->save();
+            $this->user->save();
 
             $this->askBirthday();
         });
@@ -110,7 +110,7 @@ class VipConversation extends Conversation
             $tmp_birth = $answer->getText();
 
             $this->user->birthday = $tmp_birth ?? '01.01.1900';
-            $this->save();
+            $this->user->save();
 
             $this->skPhone();
         });
