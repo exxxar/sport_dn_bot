@@ -240,7 +240,7 @@ $botman->hears('/working (on|off)', function ($bot, $working) {
 });
 
 $botman->hears('.*О нас', function ($bot) {
-    $bot->reply("https://telegra.ph/Uslugi--Stoimost-06-29");
+    $bot->reply("https://telegra.ph/BODY-MASTER---territoriya-krasivogo-i-zdorovogo-tela-06-29-2");
 })->stopsConversation();
 
 $botman->hears('.*Акции и мероприятия', function ($bot) {
@@ -256,69 +256,9 @@ $botman->hears('/start', function ($bot) {
 })->stopsConversation();
 
 $botman->hears('.*Услуги', function ($bot) {
-    $telegramUser = $bot->getUser();
-    $id = $telegramUser->getId();
-
-    /* $media = [
-         ["type" => "photo", "media" => "https://sun9-21.userapi.com/c857616/v857616755/2355ee/jY6DlCvQnk8.jpg"],
-         ["type" => "photo", "media" => "https://sun9-49.userapi.com/c857616/v857616755/2355f8/tBvlw3739EY.jpg"],
-         ["type" => "photo", "media" => "https://sun9-74.userapi.com/c857616/v857616755/235602/6CpGc4O7hL4.jpg"],
-         ["type" => "photo", "media" => "https://sun9-1.userapi.com/c857616/v857616755/23560c/4qyrvMTZc18.jpg"],
-         ["type" => "photo", "media" => "https://sun9-8.userapi.com/c857616/v857616755/235616/pJIJtVpT9oU.jpg"],
-         ["type" => "photo", "media" => "https://sun9-34.userapi.com/c857616/v857616755/235620/q6UIEjYFX48.jpg"],
-         ["type" => "photo", "media" => "https://sun9-27.userapi.com/c857616/v857616755/23562a/dwTBMS49hNg.jpg"],
-         ["type" => "photo", "media" => "https://sun9-58.userapi.com/c857616/v857616755/235634/imO2Y_0MTm4.jpg"],
-         ["type" => "photo", "media" => "https://sun9-47.userapi.com/c857616/v857616755/23563e/RF81WmcIhCk.jpg"],
-         ["type" => "photo", "media" => "https://sun9-71.userapi.com/c857616/v857616755/235648/Xss62b3AExk.jpg"],
-         ["type" => "photo", "media" => "https://sun9-41.userapi.com/c857236/v857236551/1f1eae/OST0kPEnB9A.jpg"],
-         ["type" => "photo", "media" => "https://sun9-59.userapi.com/c857236/v857236551/1f1eb8/OqXo8ukMcAQ.jpg"],
-     ];
-
-     $bot->sendRequest("sendMediaGroup",
-         [
-             "chat_id" => "$id",
-             "parse_mode" => "Markdown",
-             "media" => json_encode($media),
-
-         ]);*/
-
-    $bot->sendRequest("sendMessage", [
-        "chat_id" => "$id",
-        "parse_mode" => "HTML",
-        "text" => "Услуги | Стоимость
-
-~ 8 тренировок | 1000₽
-~ 12 тренировок | 1200 ₽
-~ безлимит (месяц) | 1800₽
-
-•• ДНЕВНОЙ (11:00-15:00)
-
-~ 8 тр | 700₽
-~ 12 тр | 850₽
-~ безлимит | 1400₽
-~ гостевой визит | 200₽
-
-~ 3 мес. | 4900₽ 1 мес. = 1633₽
-~ 6 мес. | 8600₽ 1 мес. = 1434₽
-~ Годовой (+2 в 🎁 = 14 мес.) | 14000₽ (1 мес. = 1000₽)
-~ семейный* | -15% от стоимости абонемента
-
-1 ПТ* = 500₽ (🔝 тренер)
-*персональная тренировка с тренером
-
-~ 10 ПТ | 4000₽ / 3000₽
-~ СПЛИТ (2 чел., 10 ПТ) | 6800₽ / 5100₽ (1чел.=3400₽ / 2550₽)**
-
-~ ГРУПА ПТ 3-5 чел = 3700₽
-
-~ CROSS FIT
- • 8 тр = 1200₽
- • 12 тр = 1600₽
-✔️ 1 тр = 300₽ (присоединиться к группе, гостевой визит)
-       "
-    ]);
-
+    $bot->reply("https://telegra.ph/USLUGI--STOIMOST-06-29-2");
 })->stopsConversation();
+
 $botman->hears('.*Special CashBack system', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
