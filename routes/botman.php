@@ -83,7 +83,7 @@ function mainMenu($bot, $message)
 
     ];
 
-    array_push($keyboard, ["\xE2\x9A\xA1Акции и мероприятия","\xE2\x98\x95Услуги"]);
+    array_push($keyboard, ["\xE2\x9A\xA1Акции и мероприятия", "\xE2\x98\x95Услуги"]);
     if (!$user->is_vip)
         array_push($keyboard, ["\xE2\x9A\xA1Анкета VIP-пользователя"]);
     else
@@ -153,7 +153,6 @@ $botman->hears('.*Админ. статистика', function ($bot) {
     $vip_in_bd = User::where("is_vip", true)->get()->count();
 
 
-
     $vip_in_bd_day = User::whereDate('updated_at', Carbon::today())
         ->where("is_vip", true)
         ->orderBy("id", "DESC")
@@ -176,8 +175,11 @@ $botman->hears('.*Админ. статистика', function ($bot) {
 
     $keybord = [
         [
-            ['text' => !$is_working?"Я работаю!":"Я не работаю!", 'callback_data' => "/working ".($is_working?"on":"off")]
+            ['text' => !$is_working ? "Я работаю!" : "Я не работаю!", 'callback_data' => "/working " . ($is_working ? "on" : "off")]
         ],
+       /* [
+            ['text' => "Статистика в PDF", 'callback_data' => "/get_statistic_pdf"]
+        ],*/
 
     ];
     $bot->sendRequest("sendMessage",
@@ -192,6 +194,8 @@ $botman->hears('.*Админ. статистика', function ($bot) {
         ]);
 
 })->stopsConversation();
+
+
 
 $botman->hears(".*Анкета VIP-пользователя|/do_vip", BotManController::class . "@vipConversation");
 $botman->hears('.*Розыгрыш', function ($bot) {
@@ -218,7 +222,7 @@ $botman->hears('.*Розыгрыш', function ($bot) {
         ]);
 });
 
-$botman->hears('/working (on|off)', function ($bot,$working) {
+$botman->hears('/working (on|off)', function ($bot, $working) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
 
@@ -230,10 +234,10 @@ $botman->hears('/working (on|off)', function ($bot,$working) {
     if (!$user->is_admin)
         return;
 
-    $user->is_working = $working=="on"?false:true;
+    $user->is_working = $working == "on" ? false : true;
     $user->save();
 
-    $bot->reply($user->is_working?"Теперь вас МОГУТ выбирать для работы с CashBack":"Теперь вас НЕ могут выбирать для работы с CashBack");
+    $bot->reply($user->is_working ? "Теперь вас МОГУТ выбирать для работы с CashBack" : "Теперь вас НЕ могут выбирать для работы с CashBack");
 });
 
 $botman->hears('.*О нас', function ($bot) {
@@ -256,33 +260,33 @@ $botman->hears('.*Услуги', function ($bot) {
     $telegramUser = $bot->getUser();
     $id = $telegramUser->getId();
 
-   /* $media = [
-        ["type" => "photo", "media" => "https://sun9-21.userapi.com/c857616/v857616755/2355ee/jY6DlCvQnk8.jpg"],
-        ["type" => "photo", "media" => "https://sun9-49.userapi.com/c857616/v857616755/2355f8/tBvlw3739EY.jpg"],
-        ["type" => "photo", "media" => "https://sun9-74.userapi.com/c857616/v857616755/235602/6CpGc4O7hL4.jpg"],
-        ["type" => "photo", "media" => "https://sun9-1.userapi.com/c857616/v857616755/23560c/4qyrvMTZc18.jpg"],
-        ["type" => "photo", "media" => "https://sun9-8.userapi.com/c857616/v857616755/235616/pJIJtVpT9oU.jpg"],
-        ["type" => "photo", "media" => "https://sun9-34.userapi.com/c857616/v857616755/235620/q6UIEjYFX48.jpg"],
-        ["type" => "photo", "media" => "https://sun9-27.userapi.com/c857616/v857616755/23562a/dwTBMS49hNg.jpg"],
-        ["type" => "photo", "media" => "https://sun9-58.userapi.com/c857616/v857616755/235634/imO2Y_0MTm4.jpg"],
-        ["type" => "photo", "media" => "https://sun9-47.userapi.com/c857616/v857616755/23563e/RF81WmcIhCk.jpg"],
-        ["type" => "photo", "media" => "https://sun9-71.userapi.com/c857616/v857616755/235648/Xss62b3AExk.jpg"],
-        ["type" => "photo", "media" => "https://sun9-41.userapi.com/c857236/v857236551/1f1eae/OST0kPEnB9A.jpg"],
-        ["type" => "photo", "media" => "https://sun9-59.userapi.com/c857236/v857236551/1f1eb8/OqXo8ukMcAQ.jpg"],
-    ];
+    /* $media = [
+         ["type" => "photo", "media" => "https://sun9-21.userapi.com/c857616/v857616755/2355ee/jY6DlCvQnk8.jpg"],
+         ["type" => "photo", "media" => "https://sun9-49.userapi.com/c857616/v857616755/2355f8/tBvlw3739EY.jpg"],
+         ["type" => "photo", "media" => "https://sun9-74.userapi.com/c857616/v857616755/235602/6CpGc4O7hL4.jpg"],
+         ["type" => "photo", "media" => "https://sun9-1.userapi.com/c857616/v857616755/23560c/4qyrvMTZc18.jpg"],
+         ["type" => "photo", "media" => "https://sun9-8.userapi.com/c857616/v857616755/235616/pJIJtVpT9oU.jpg"],
+         ["type" => "photo", "media" => "https://sun9-34.userapi.com/c857616/v857616755/235620/q6UIEjYFX48.jpg"],
+         ["type" => "photo", "media" => "https://sun9-27.userapi.com/c857616/v857616755/23562a/dwTBMS49hNg.jpg"],
+         ["type" => "photo", "media" => "https://sun9-58.userapi.com/c857616/v857616755/235634/imO2Y_0MTm4.jpg"],
+         ["type" => "photo", "media" => "https://sun9-47.userapi.com/c857616/v857616755/23563e/RF81WmcIhCk.jpg"],
+         ["type" => "photo", "media" => "https://sun9-71.userapi.com/c857616/v857616755/235648/Xss62b3AExk.jpg"],
+         ["type" => "photo", "media" => "https://sun9-41.userapi.com/c857236/v857236551/1f1eae/OST0kPEnB9A.jpg"],
+         ["type" => "photo", "media" => "https://sun9-59.userapi.com/c857236/v857236551/1f1eb8/OqXo8ukMcAQ.jpg"],
+     ];
 
-    $bot->sendRequest("sendMediaGroup",
-        [
-            "chat_id" => "$id",
-            "parse_mode" => "Markdown",
-            "media" => json_encode($media),
+     $bot->sendRequest("sendMediaGroup",
+         [
+             "chat_id" => "$id",
+             "parse_mode" => "Markdown",
+             "media" => json_encode($media),
 
-        ]);*/
+         ]);*/
 
-   $bot->sendRequest("sendMessage",[
-       "chat_id"=>"$id",
-       "parse_mode"=>"HTML",
-       "text"=>"Услуги | Стоимость
+    $bot->sendRequest("sendMessage", [
+        "chat_id" => "$id",
+        "parse_mode" => "HTML",
+        "text" => "Услуги | Стоимость
 
 ~ 8 тренировок | 1000₽
 ~ 12 тренировок | 1200 ₽
@@ -313,7 +317,7 @@ $botman->hears('.*Услуги', function ($bot) {
  • 12 тр = 1600₽
 ✔️ 1 тр = 300₽ (присоединиться к группе, гостевой визит)
        "
-   ]);
+    ]);
 
 });
 $botman->hears('.*Special CashBack system', function ($bot) {
@@ -350,7 +354,7 @@ $botman->hears('.*Special CashBack system', function ($bot) {
         return;
     }
 
-    $message = sprintf("У вас *%s* руб.!\n_Для начисления CashBack при оплате за меню дайте отсканировать данный QR-код сотруднику_ *Body Master!*", $cashback);
+    $message = sprintf("У вас *%s* руб.!\n_Для начисления CashBack при оплате за абонимент дайте отсканировать данный QR-код администратору_ *Body Master!*", $cashback);
     $keyboard = [
         [
             ['text' => "Мой бюджет", 'callback_data' => "/my_money"],
@@ -359,13 +363,12 @@ $botman->hears('.*Special CashBack system', function ($bot) {
 
     ];
 
-    $work_admin_count = User::where("is_admin",true)
-        ->where("is_working",true)
-        ->get()
-        ->count()??0;
+    $work_admin_count = User::where("is_admin", true)
+            ->where("is_working", true)
+            ->get()
+            ->count() ?? 0;
 
-    if ($work_admin_count>0)
-    {
+    if ($work_admin_count > 0) {
         array_push($keyboard, [
             ['text' => "Запрос на CashBack", 'switch_inline_query_current_chat' => ""],
         ]);
@@ -385,7 +388,7 @@ $botman->hears('.*Special CashBack system', function ($bot) {
             ['text' => "Воспользоваться системой CashBack", 'url' => "https://t.me/" . env("APP_BOT_NAME") . "?start=$code"],
         ],
         [
-            ['text' => "Подробности на сайте", 'url' => "https://body-master.ru"],
+            ['text' => "Подробности в нашем канале", 'url' => "https://body-master.ru"],
         ],
     ];
 
@@ -522,6 +525,57 @@ $botman->hears('/cashback_up', function ($bot) {
                     $keyboard
             ])
         ]);
+});
+
+$botman->hears('*.Администраторы|/admins', function ($bot) {
+
+    $telegramUser = $bot->getUser();
+    $id = $telegramUser->getId();
+
+    $users =
+        User::where("is_admin", true)
+            ->where("is_working", true)
+            ->orderBy("id", "DESC")
+            ->take(8)
+            ->skip(0)
+            ->get();
+
+    if (empty($users)) {
+        $bot->reply("К сожалению, на текущий момент нет доступных администраторов:(");
+        return;
+    }
+
+    foreach ($users as $user) {
+
+        $tmp_user_id = (string)$user->telegram_chat_id;
+        while (strlen($tmp_user_id) < 10)
+            $tmp_user_id = "0" . $tmp_user_id;
+
+        $code = base64_encode("005" . $tmp_user_id);
+        $url_link = "https://t.me/" . env("APP_BOT_NAME") . "?start=$code";
+
+        $message = sprintf("Администратор #%s %s (%s)", $user->id, ($user->fio_from_telegram ?? $user->name), ($user->phone ?? 'Без телефона'));
+        $keyboard = [
+            [
+                ['text' => "\xF0\x9F\x91\x89Запросить CashBack у администратора", "url" => "$url_link"],
+            ],
+
+        ];
+
+        $bot->sendRequest("sendMessage",
+            [
+                "chat_id" => "$id",
+                "text" => $message,
+                "parse_mode" => "Markdown",
+                'reply_markup' => json_encode([
+                    'inline_keyboard' =>
+                        $keyboard
+                ])
+            ]);
+
+    }
+
+
 });
 $botman->hears('/cashback_down', function ($bot) {
     $telegramUser = $bot->getUser();

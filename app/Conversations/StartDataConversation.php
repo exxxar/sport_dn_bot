@@ -30,6 +30,7 @@ class StartDataConversation extends Conversation
     protected $check_info;
     protected $money_in_check;
     protected $request_buyer_id;
+    protected $cashback_percent;
 
     public function createUser()
     {
@@ -108,6 +109,7 @@ class StartDataConversation extends Conversation
         $this->check_info = '';
         $this->money_in_check = 0;
         $this->request_buyer_id = null;
+        $this->cashback_percent = 10;
     }
 
     /**
@@ -228,7 +230,8 @@ class StartDataConversation extends Conversation
         $question = Question::create("Какое действие выполнить?")
             ->addButtons([
                 Button::create("Списать CashBack")->value('askforpay'),
-                Button::create("Начислить CashBack")->value('addcashback'),
+                Button::create("Начислить CashBack 10%")->value('addcashback10'),
+                Button::create("Начислить CashBack 5%")->value('addcashback5'),
                 Button::create("Добавить администратора")->value('addadmin'),
                 Button::create("Убрать администратора")->value('removeadmin'),
                 Button::create("Завершить работу")->value('stopcashback'),
@@ -242,7 +245,13 @@ class StartDataConversation extends Conversation
                     $this->askForPay();
                 }
 
-                if ($selectedValue == "addcashback") {
+                if ($selectedValue == "addcashback10") {
+                    $this->cashback_percent = 10;
+                    $this->askForCashback();
+                }
+
+                if ($selectedValue == "addcashback5") {
+                    $this->cashback_percent = 5;
                     $this->askForCashback();
                 }
 
@@ -380,6 +389,7 @@ class StartDataConversation extends Conversation
         });
     }
 
+
     public function askForCashback()
     {
         $question = Question::create("Введите сумму из чека")
@@ -421,7 +431,7 @@ class StartDataConversation extends Conversation
             return;
         }
 
-        $cashback = ((intval($this->money_in_check) ?? 0) * env("CAHSBAK_PROCENT") / 100);
+        $cashback = ((intval($this->money_in_check) ?? 0) * $this->cashback_percent / 100);
         $parent_cashback = ((intval($this->money_in_check) ?? 0) * env("NETWORK_CAHSBAK_PROCENT") / 100);
 
         $recipient_user->cashback_money += $cashback;
