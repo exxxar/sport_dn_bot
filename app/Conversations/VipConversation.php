@@ -56,13 +56,17 @@ class VipConversation extends Conversation
 
         ];
 
-        array_push($keyboard, ["\xF0\x9F\x8D\xB1Новое меню"]);
+        array_push($keyboard, ["\xE2\x9A\xA1Акции и мероприятия", "\xE2\x98\x95Услуги"]);
         if (!$user->is_vip)
             array_push($keyboard, ["\xE2\x9A\xA1Анкета VIP-пользователя"]);
         else
             array_push($keyboard, ["\xE2\x9A\xA1Special CashBack system"]);
 
+        /*    array_push($keyboard,["\xF0\x9F\x8E\xB0Розыгрыш"]);*/
         array_push($keyboard, ["\xF0\x9F\x92\xADО Нас"]);
+
+        if ($user->is_admin)
+            array_push($keyboard, ["\xE2\x9A\xA0Админ. статистика"]);
 
         $this->bot->sendRequest("sendMessage",
             [
@@ -103,7 +107,7 @@ class VipConversation extends Conversation
 
     public function askBirthday()
     {
-        $question = Question::create('Введите дату совего рожедения и получайте бонусы!')
+        $question = Question::create('Введите дату совего рожедения в формате ДД.ММ.ГГГГ (например, 09.09.1991) и получайте бонусы!')
             ->fallback('Спасибо что пообщался со мной:)!');
 
         $this->ask($question, function (Answer $answer) {
