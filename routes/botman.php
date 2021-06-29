@@ -244,7 +244,7 @@ $botman->hears('.*О нас', function ($bot) {
 })->stopsConversation();
 
 $botman->hears('.*Акции и мероприятия', function ($bot) {
-    $bot->reply("https://telegra.ph/Body-Master--Doneck--Makeevka-06-28-2");
+    $bot->reply("https://telegra.ph/AKCII-I-MEROPRIYATIYA-06-29");
 })->stopsConversation();
 
 
