@@ -317,7 +317,7 @@ $tmp
 
     Telegram::sendDocument([
         'chat_id' => $id,
-        'document' => InputFile::create(storage_path('app/public') . "/users-statistic.pdf"),
+        'document' => InputFile::create(storage_path('app') . "/users-statistic.pdf"),
         'parse_mode' => "Markdown",
         'caption' => "Статистика пользователей"
     ]);
