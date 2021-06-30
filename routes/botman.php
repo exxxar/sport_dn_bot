@@ -238,7 +238,7 @@ $botman->hears('/get_users_pdf', function ($bot) {
     $tmp = "";
 
     foreach ($users as $user) {
-        $tmp_parent_user = is_null($user->parent_id) ? "-" : ($user->parent->fio_from_telegram ?? $user->parent->telegram_chat_id);
+        $tmp_parent_user = is_null($user->parent_id) ? "-" : ($user->parent->fio_from_telegram ?? $user->parent->telegram_chat_id)."[#".$user->id."]";
 
         $tmp .= sprintf("<tr><td>#%s</td> <td>%s<br>Пригласил %s <br>Зарегестрирован <strong>%s</strong> <br>Последнее действие <strong>%s</strong>  </td>  <td>%s</td> <td>%s </td> <td> %s руб.</td></tr>",
             $user->id,
@@ -274,11 +274,11 @@ width: 50px;
 }
 th:nth-child(2),
 td:nth-child(2) {
-width: 250px;
+width: 400px;
 }
 th:nth-child(3),
 td:nth-child(3) {
-width: 250px;
+width: 100px;
 }
 th:nth-child(4),
 td:nth-child(4) {
