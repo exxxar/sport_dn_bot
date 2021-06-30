@@ -352,8 +352,7 @@ $botman->hears('/get_statistic_pdf', function ($bot) {
         $tmp_employee =($history->employee->fio_from_telegram ??$history->employee->telegram_chat_id)."[#".$history->employee->id."]";
 
         $tmp .= sprintf("<tr><td>#%s</td> <td>%s руб.</td>  <td>%s</td> <td>%s руб.</td> <td>%s </td> <td> %s </td> <td> %s </td> <td> %s </td></tr>",
-            $user->id,
-
+            $history->id,
             $history->amount,
             $history->bill_number,
             $history->money_in_bill,
