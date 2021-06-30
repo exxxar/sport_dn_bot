@@ -238,7 +238,7 @@ $botman->hears('/get_users_pdf', function ($bot) {
     $tmp = "";
 
     foreach ($users as $user) {
-        $tmp_parent_user = is_null($user->parent_id) ? "-" : ($user->parent->fio_from_telegram ?? $user->parent->telegram_chat_id)."[#".$user->id."]";
+        $tmp_parent_user = is_null($user->parent_id) ? "-" : ($user->parent->fio_from_telegram ?? $user->parent->telegram_chat_id)."[#".$user->parent_id."]";
 
         $tmp .= sprintf("<tr><td>#%s</td> <td>%s<br>Пригласил %s <br>Зарегестрирован <strong>%s</strong> <br>Последнее действие <strong>%s</strong>  </td>  <td>%s</td> <td>%s </td> <td> %s руб.</td></tr>",
             $user->id,
@@ -327,7 +327,125 @@ $tmp
 });
 
 $botman->hears('/get_statistic_pdf', function ($bot) {
-    $bot->reply("В разработке");
+    $telegramUser = $bot->getUser();
+    $id = $telegramUser->getId();
+
+    $user = User::where("telegram_chat_id", $id)->first();
+
+    if (is_null($user))
+        return;
+
+    if (!$user->is_admin)
+        return;
+
+    $mpdf = new Mpdf();
+
+    $cashbackHistories = \App\CashBackHistory::all();
+
+    $current_date = Carbon::now("+3:00");
+
+    $tmp = "";
+
+    foreach ($cashbackHistories as $history) {
+        $tmp_user = ($history->user->fio_from_telegram ??$history->user->telegram_chat_id)."[#".$history->user->id."]";
+
+        $tmp_employee =($history->employee->fio_from_telegram ??$history->employee->telegram_chat_id)."[#".$history->employee->id."]";
+
+        $tmp .= sprintf("<tr><td>#%s</td> <td>%s руб.</td>  <td>%s</td> <td>%s руб.</td> <td>%s </td> <td> %s </td> <td> %s </td> <td> %s </td></tr>",
+            $user->id,
+
+            $history->amount,
+            $history->bill_number,
+            $history->money_in_bill,
+            $tmp_employee,
+            $tmp_user,
+            ($user->type==0?"Начисление":"Списание"),
+           $history->created_at
+        );
+    }
+
+    $number = Str::uuid();
+    $mpdf->WriteHTML("<h1>Стастика по начислениям</h1>");
+    $mpdf->WriteHTML("<h6>Уникальный идентификатор документа <strong style='color:darkred'>$number</strong></h6>");
+    $mpdf->WriteHTML('<h3>Сервис "Body Master"</h3>');
+    $mpdf->WriteHTML('<hr>');
+    $mpdf->WriteHTML("<ul>
+
+ <li>Дата и время <strong>$current_date!</strong></li>
+</ul>
+<hr>
+<h3>История начисления и списания CashBack:</h3>
+<style>
+th:nth-child(1),
+td:nth-child(1) {
+width: 50px;
+}
+th:nth-child(2),
+td:nth-child(2) {
+width: 100px;
+}
+th:nth-child(3),
+td:nth-child(3) {
+width: 100px;
+}
+th:nth-child(4),
+td:nth-child(4) {
+width: 100px;
+}
+th:nth-child(5),
+td:nth-child(5) {
+width: 100px;
+}
+th:nth-child(6),
+td:nth-child(6) {
+width: 100px;
+}
+th:nth-child(7),
+td:nth-child(7) {
+width: 100px;
+}
+th:nth-child(8),
+td:nth-child(8) {
+width: 100px;
+}
+</style>
+");
+
+
+    $mpdf->WriteHTML("<table>
+<tr>
+<td><strong>№</strong></td>
+<td><strong>Сумма CashBack</strong></td>
+<td><strong>Причина</strong></td>
+<td><strong>Сумма в чеке</strong></td>
+<td><strong>Сотрудник</strong></td>
+<td><strong>Пользователь</strong></td>
+<td><strong>Тип операции</strong></td>
+<td><strong>Дата операции</strong></td>
+</tr>
+$tmp
+</table>
+<hr>
+
+<h4>Команда <span style='color:red'>BodyMaster</span> благодарит Вас за использование нашего сервиса! Мы стараемся быть лучше для Вас!</h4>
+");
+    $file = $mpdf->Output("users-cashback-statistic.pdf", \Mpdf\Output\Destination::STRING_RETURN);
+
+    Storage::put("users-cashback-statistic.pdf", $file);
+
+
+    /*  Mail::to()
+          ->send(new \App\Mail\CheckMail(storage_path('app\public')."\\codes.pdf"));*/
+
+
+    Telegram::sendDocument([
+        'chat_id' => $id,
+        'document' => InputFile::create(storage_path('app') . "/users-cashback-statistic.pdf"),
+        'parse_mode' => "Markdown",
+        'caption' => "Статистика списания и начисления CashBack"
+    ]);
+
+    Storage::delete("users-cashback-statistic.pdf");
 });
 
 $botman->hears(".*Анкета VIP-пользователя|/do_vip", BotManController::class . "@vipConversation")->stopsConversation();
