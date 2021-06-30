@@ -8,6 +8,10 @@ use App\User;
 use BotMan\BotMan\BotMan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Mpdf\Mpdf;
+use Telegram\Bot\FileUpload\InputFile;
 use Telegram\Bot\Laravel\Facades\Telegram;
 
 $botman = resolve('botman');
@@ -176,10 +180,13 @@ $botman->hears('.*Админ. статистика', function ($bot) {
     $keybord = [
         [
             ['text' => !$is_working ? "Я работаю!" : "Я не работаю!", 'callback_data' => "/working " . ($is_working ? "on" : "off")]
-        ]
-        /* [
-             ['text' => "Статистика в PDF", 'callback_data' => "/get_statistic_pdf"]
-         ],*/
+        ],
+        [
+            ['text' => "Пользователи в PDF", 'callback_data' => "/get_users_pdf"]
+        ],
+        [
+            ['text' => "Списания и начисления в PDF", 'callback_data' => "/get_statistic_pdf"]
+        ],
 
     ];
     $bot->sendRequest("sendMessage",
@@ -195,6 +202,133 @@ $botman->hears('.*Админ. статистика', function ($bot) {
 
 })->stopsConversation();
 
+$botman->hears('/get_users_pdf', function ($bot) {
+    $telegramUser = $bot->getUser();
+    $id = $telegramUser->getId();
+
+    $user = User::where("telegram_chat_id", $id)->first();
+
+    if (is_null($user))
+        return;
+
+    if (!$user->is_admin)
+        return;
+
+    $mpdf = new Mpdf();
+
+    $users_in_bd = User::all()->count();
+    $vip_in_bd = User::where("is_vip", true)->get()->count();
+
+
+    $vip_in_bd_day = User::whereDate('updated_at', Carbon::today())
+        ->where("is_vip", true)
+        ->orderBy("id", "DESC")
+        ->get()
+        ->count();
+
+    $users_in_bd_day = User::whereDate('created_at', Carbon::today())
+        ->orderBy("id", "DESC")
+        ->get()
+        ->count();
+
+    $current_date = Carbon::now("+3:00");
+
+    $users = User::all();
+
+    $tmp = "";
+
+    foreach ($users as $user) {
+        $tmp_parent_user = is_null($user->parent_id) ? "-" : ($user->parent->fio_from_telegram ?? $user->parent->telegram_chat_id);
+
+        $tmp .= sprintf("<tr><td>#%s</td> <td>%s<br>Пригласил %s <br>Зарегестрирован <strong>%s</strong> <br>Последнее действие <strong>%s</strong>  </td>  <td>%s</td> <td>%s </td> <td> %s руб.</td></tr>",
+            $user->id,
+            ("<strong>" . ($user->fio_from_telegram ?? $user->telegram_chat_id) . "</strong> "),
+            $tmp_parent_user,
+            $user->created_at,
+            $user->updated_at,
+            ($user->phone ?? "Без номера"),
+            ($user->birthday ?? "Без даты рождения"),
+            ($user->cashback_money ?? 0)
+        );
+    }
+
+    $number = Str::uuid();
+    $mpdf->WriteHTML("<h1>Стастика пользователей</h1>");
+    $mpdf->WriteHTML("<h6>Уникальный идентификатор документа <strong style='color:darkred'>$number</strong></h6>");
+    $mpdf->WriteHTML('<h3>Сервис "Body Master"</h3>');
+    $mpdf->WriteHTML('<hr>');
+    $mpdf->WriteHTML("<ul>
+ <li>Всего пользователей в БД <strong>$users_in_bd</strong></li>
+ <li>VIP-пользователй в БД <strong>$vip_in_bd</strong></li>
+ <li>Пользователей в БД за день <strong>$users_in_bd_day</strong></li>
+ <li>VIP-пользователй в БД за день <strong>$vip_in_bd_day</strong></li>
+
+ <li>Дата и время <strong>$current_date!</strong></li>
+</ul>
+<hr>
+<h3>Пользователи в БД:</h3>
+<style>
+th:nth-child(1),
+td:nth-child(1) {
+width: 50px;
+}
+th:nth-child(2),
+td:nth-child(2) {
+width: 250px;
+}
+th:nth-child(3),
+td:nth-child(3) {
+width: 250px;
+}
+th:nth-child(4),
+td:nth-child(4) {
+width: 100px;
+}
+th:nth-child(5),
+td:nth-child(5) {
+width: 100px;
+}
+</style>
+");
+
+
+    $mpdf->WriteHTML("<table>
+<tr>
+<td><strong>№</strong></td>
+<td><strong>Пользователь</strong></td>
+<td><strong>Номер телефона</strong></td>
+<td><strong>Дата рождения</strong></td>
+<td><strong>CashBack, руб</strong></td>
+</tr>
+$tmp
+</table>
+<hr>
+
+<h4>Команда <span style='color:red'>BodyMaster</span> благодарит Вас за использование нашего сервиса! Мы стараемся быть лучше для Вас!</h4>
+");
+    $file = $mpdf->Output("users-statistic.pdf", \Mpdf\Output\Destination::STRING_RETURN);
+
+    Storage::put("users-statistic.pdf", $file);
+
+
+    /*  Mail::to()
+          ->send(new \App\Mail\CheckMail(storage_path('app\public')."\\codes.pdf"));*/
+
+
+    Telegram::sendDocument([
+        'chat_id' => $id,
+        'document' => InputFile::create(storage_path('app/public') . "/users-statistic.pdf"),
+        'parse_mode' => "Markdown",
+        'caption' => "Статистика пользователей"
+    ]);
+
+    Storage::delete("users-statistic.pdf");
+
+});
+
+$botman->hears('/get_statistic_pdf', function ($bot) {
+    $bot->reply("В разработке");
+});
 
 $botman->hears(".*Анкета VIP-пользователя|/do_vip", BotManController::class . "@vipConversation")->stopsConversation();
 $botman->hears('.*Розыгрыш', function ($bot) {
@@ -293,7 +427,7 @@ $botman->hears('.*CASH BACK system|.*Special CashBack system', function ($bot) {
         return;
     }
 
-    $message = sprintf("У вас *%s* руб.!\n_Для начисления CashBack при оплате за абонимент дайте отсканировать данный QR-код администратору_ *Body Master!*", $cashback);
+    $message = sprintf("У вас *%s* руб.!\n_Для начисления CashBack при оплате за абонемент дайте отсканировать данный QR-код администратору_ *Body Master!*", $cashback);
     $keyboard = [
         [
             ['text' => "Мой бюджет", 'callback_data' => "/my_money"],
@@ -334,7 +468,7 @@ $botman->hears('.*CASH BACK system|.*Special CashBack system', function ($bot) {
     $bot->sendRequest("sendMessage",
         [
             "chat_id" => "$id",
-            "text" => sprintf("%s\n%s","Теперь ты можешь получать 10% CashBack от всех твоих покупок и 5% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_","https://telegra.ph/CASH-BACK-SYSTEM-06-29"),
+            "text" => sprintf("%s\n%s", "Теперь ты можешь получать 10% CashBack от всех твоих покупок и 5% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_", "https://telegra.ph/CASH-BACK-SYSTEM-06-29"),
             "parse_mode" => "Markdown",
             'reply_markup' => json_encode([
                 'inline_keyboard' =>
