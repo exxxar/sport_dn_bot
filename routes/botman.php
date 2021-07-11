@@ -495,7 +495,7 @@ $botman->hears('.*О нас', function ($bot) {
 })->stopsConversation();
 
 $botman->hears('.*Акции и мероприятия', function ($bot) {
-    $bot->reply("https://telegra.ph/AKCII-I-MEROPRIYATIYA-06-29");
+    $bot->reply("https://telegra.ph/AKCII-I-MEROPRIYATIYA-07-11");
 })->stopsConversation();
 
 
