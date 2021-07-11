@@ -491,7 +491,7 @@ $botman->hears('/working (on|off)', function ($bot, $working) {
 });
 
 $botman->hears('.*О нас', function ($bot) {
-    $bot->reply("https://telegra.ph/BODY-MASTER---territoriya-krasivogo-i-zdorovogo-tela-06-29-2");
+    $bot->reply("https://telegra.ph/BODY-MASTER---territoriya-krasivogo-i-zdorovogo-tela-horoshego-nastroeniya-i-zaryada-ehnergiej-07-11");
 })->stopsConversation();
 
 $botman->hears('.*Акции и мероприятия', function ($bot) {
@@ -507,7 +507,7 @@ $botman->hears('/start', function ($bot) {
 })->stopsConversation();
 
 $botman->hears('.*Услуги', function ($bot) {
-    $bot->reply("https://telegra.ph/USLUGI--STOIMOST-06-29-2");
+    $bot->reply("https://telegra.ph/Uslugi--Stoimost-07-11-2");
 })->stopsConversation();
 
 $botman->hears('.*CASH BACK system|.*Special CashBack system', function ($bot) {
@@ -585,7 +585,7 @@ $botman->hears('.*CASH BACK system|.*Special CashBack system', function ($bot) {
     $bot->sendRequest("sendMessage",
         [
             "chat_id" => "$id",
-            "text" => sprintf("%s\n%s", "Теперь ты можешь получать 10% CashBack от всех твоих покупок и 5% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_", "https://telegra.ph/CASH-BACK-SYSTEM-06-29"),
+            "text" => sprintf("%s\n%s", "Теперь ты можешь получать 10% CashBack от всех твоих покупок и 5% от покукпок друзей! Для этого подключи друзей к данной системе!\n_Дай отсканировать QR-код друзьям или делись ссылкой с друзьями и получай больше CashBack с каждой их покупки!_", "https://telegra.ph/CASH-BACK-SYSTEM-07-11"),
             "parse_mode" => "Markdown",
             'reply_markup' => json_encode([
                 'inline_keyboard' =>
